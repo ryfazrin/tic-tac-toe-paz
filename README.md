@@ -11,6 +11,14 @@
 
 ---
 
+## 📸 Application Screenshots
+
+| ⚡ Cyberpunk Neon (2-Column Desktop Layout) | 🏆 Victory Glow & Confetti FX | 🎨 Clean Minimalist Theme |
+| :---: | :---: | :---: |
+| ![Cyberpunk Mode](screenshots/image-1.png) | ![Victory State](screenshots/image-2.png) | ![Minimalist Mode](screenshots/image-3.png) |
+
+---
+
 ## 📖 About the Application
 
 **Tic-Tac-Toe Pro** is a modern, high-performance web application designed to showcase enterprise-grade React 19 and Next.js 16 App Router engineering. Built in response to the technical challenge brief in [`docs/test-1.md`](docs/test-1.md), it elevates the classic 3×3 game with an unbeatable AI opponent, dynamic theme switching, browser-native audio synthesis, celebration particle effects, and an ergonomic two-column responsive layout.
