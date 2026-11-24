@@ -165,9 +165,6 @@ export default function TicTacToePage() {
             Press <kbd className="px-1.5 py-0.5 rounded border bg-muted font-mono text-[10px]">D</kbd> for dark mode
           </span>
         </div>
-        <p className="text-[11px] opacity-75">
-          Engineered with AI SDLC &bull; Semprove / Capm Developer Assessment
-        </p>
       </footer>
     </main>
   );
