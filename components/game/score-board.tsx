@@ -23,7 +23,7 @@ export function ScoreBoard({
   const isAi = gameMode === "ai-unbeatable";
 
   return (
-    <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5 w-full max-w-md mx-auto">
+    <div className="grid grid-cols-3 gap-2.5 sm:gap-3 w-full">
       {/* Player X Score Card */}
       <div
         className={cn(

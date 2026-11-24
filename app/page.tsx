@@ -66,7 +66,7 @@ export default function TicTacToePage() {
       )}
 
       {/* Top Header */}
-      <header className="z-10 flex flex-col items-center gap-2 text-center w-full max-w-md pt-2 sm:pt-4">
+      <header className="z-10 flex flex-col items-center gap-2 text-center w-full max-w-2xl pt-2 sm:pt-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border bg-card/60 backdrop-blur-xs text-xs font-semibold tracking-wider uppercase text-muted-foreground shadow-xs">
           <GameController weight="bold" className="size-3.5 text-primary" />
           <span>React 19 &bull; Next.js 16</span>
@@ -94,64 +94,70 @@ export default function TicTacToePage() {
       </header>
 
       {/* Main Interactive Game Container */}
-      <section className="z-10 flex flex-col items-center gap-4 sm:gap-5 w-full max-w-md my-4">
-        {/* Scoreboard */}
-        <ScoreBoard
-          scores={scores}
-          turn={turn}
-          gameMode={gameMode}
-          theme={theme}
-          isGameOver={isGameOver}
-        />
+      <section className="z-10 flex flex-col md:flex-row items-center md:items-start justify-center gap-6 lg:gap-8 w-full max-w-4xl my-4">
+        {/* Left Column: Game Arena (Turn Indicator + 3x3 Grid Board) */}
+        <div className="flex flex-col items-center gap-3.5 w-full max-w-[340px] sm:max-w-[380px]">
+          {/* Turn & Status Indicator */}
+          <TurnIndicator
+            turn={turn}
+            winResult={winResult}
+            isDraw={isDraw}
+            isThinking={isThinking}
+            gameMode={gameMode}
+            theme={theme}
+          />
 
-        {/* Turn & Status Indicator */}
-        <TurnIndicator
-          turn={turn}
-          winResult={winResult}
-          isDraw={isDraw}
-          isThinking={isThinking}
-          gameMode={gameMode}
-          theme={theme}
-        />
-
-        {/* 3x3 Grid Board */}
-        <div
-          role="grid"
-          aria-label="Tic-Tac-Toe Game Board"
-          className={cn(
-            "grid grid-cols-3 gap-2.5 sm:gap-3.5 p-3.5 sm:p-4 rounded-3xl border w-full aspect-square max-w-[340px] sm:max-w-[380px] transition-all duration-300 shadow-lg",
-            theme === "cyberpunk"
-              ? "bg-slate-900/60 border-cyan-500/20 backdrop-blur-md shadow-[0_0_30px_rgba(6,182,212,0.1)]"
-              : "bg-card/70 border-border/80 backdrop-blur-md shadow-md"
-          )}
-        >
-          {board.map((cellValue, index) => {
-            const isWinningCell = winResult?.line.includes(index) ?? false;
-            return (
-              <BoardCell
-                key={index}
-                index={index}
-                value={cellValue}
-                isWinning={isWinningCell}
-                disabled={isGameOver || isThinking}
-                theme={theme}
-                onSelect={() => makeMove(index)}
-              />
-            );
-          })}
+          {/* 3x3 Grid Board */}
+          <div
+            role="grid"
+            aria-label="Tic-Tac-Toe Game Board"
+            className={cn(
+              "grid grid-cols-3 gap-2.5 sm:gap-3.5 p-3.5 sm:p-4 rounded-3xl border w-full aspect-square transition-all duration-300 shadow-lg",
+              theme === "cyberpunk"
+                ? "bg-slate-900/60 border-cyan-500/20 backdrop-blur-md shadow-[0_0_30px_rgba(6,182,212,0.1)]"
+                : "bg-card/70 border-border/80 backdrop-blur-md shadow-md"
+            )}
+          >
+            {board.map((cellValue, index) => {
+              const isWinningCell = winResult?.line.includes(index) ?? false;
+              return (
+                <BoardCell
+                  key={index}
+                  index={index}
+                  value={cellValue}
+                  isWinning={isWinningCell}
+                  disabled={isGameOver || isThinking}
+                  theme={theme}
+                  onSelect={() => makeMove(index)}
+                />
+              );
+            })}
+          </div>
         </div>
 
-        {/* Controls: New Game, Mode, Theme, Sound */}
-        <GameControls
-          gameMode={gameMode}
-          theme={theme}
-          soundEnabled={soundEnabled}
-          onResetGame={resetGame}
-          onResetScores={resetScores}
-          onSelectMode={setGameMode}
-          onSelectTheme={setTheme}
-          onToggleSound={toggleSound}
-        />
+        {/* Right Column: Scoreboard & Game Controls */}
+        <div className="flex flex-col gap-4 w-full max-w-[340px] sm:max-w-[380px]">
+          {/* Scoreboard */}
+          <ScoreBoard
+            scores={scores}
+            turn={turn}
+            gameMode={gameMode}
+            theme={theme}
+            isGameOver={isGameOver}
+          />
+
+          {/* Controls: New Game, Mode, Theme, Sound */}
+          <GameControls
+            gameMode={gameMode}
+            theme={theme}
+            soundEnabled={soundEnabled}
+            onResetGame={resetGame}
+            onResetScores={resetScores}
+            onSelectMode={setGameMode}
+            onSelectTheme={setTheme}
+            onToggleSound={toggleSound}
+          />
+        </div>
       </section>
 
       {/* Footer & Shortcut Hints */}

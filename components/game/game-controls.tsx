@@ -36,7 +36,7 @@ export function GameControls({
   onToggleSound,
 }: GameControlsProps) {
   return (
-    <div className="flex flex-col gap-4 w-full max-w-md mx-auto">
+    <div className="flex flex-col gap-3.5 w-full">
       {/* Primary Action: New Game Button */}
       <Button
         onClick={onResetGame}
