@@ -18,6 +18,9 @@
 | ![Cyberpunk Mode](screenshots/image-1.png) | ![Victory State](screenshots/image-2.png) | ![Minimalist Mode](screenshots/image-3.png) |
 
 ---
+## 📸 Application Demo
+
+https://youtu.be/8ahjQaq7_nE
 
 ## 📖 About the Application
 
