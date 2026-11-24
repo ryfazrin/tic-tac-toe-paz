@@ -13,7 +13,7 @@
 
 ## 📸 Application Screenshots
 
-| ⚡ Cyberpunk Neon (2-Column Desktop Layout) | 🏆 Victory Glow & Confetti FX | 🎨 Clean Minimalist Theme |
+|  🎨 Clean Minimalist Theme | 🏆 Victory Glow & Confetti FX | ⚡ Cyberpunk Neon |
 | :---: | :---: | :---: |
 | ![Cyberpunk Mode](screenshots/image-1.png) | ![Victory State](screenshots/image-2.png) | ![Minimalist Mode](screenshots/image-3.png) |
 
